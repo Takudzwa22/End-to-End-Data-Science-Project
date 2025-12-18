@@ -1,0 +1,32 @@
+{
+  "best_model": "random_forest",
+  "results": {
+    "baseline_mean": {
+      "mae": 309444.6921462589,
+      "rmse": 473318.71536270255,
+      "r2": -0.001814821429207747
+    },
+    "ridge": {
+      "mae": 166119.67268898687,
+      "rmse": 266191.3143392655,
+      "r2": 0.6831396777402372
+    },
+    "random_forest": {
+      "mae": 120439.67524555363,
+      "rmse": 223394.79470495143,
+      "r2": 0.7768349413823137
+    }
+  },
+  "features": {
+    "numeric": [
+      "area",
+      "rooms",
+      "property_age"
+    ],
+    "categorical": []
+  },
+  "notes": [
+    "Update src/schema.py to match your dataset columns.",
+    "Justify any cleaning thresholds used in src/preprocess.py in your report."
+  ]
+}
