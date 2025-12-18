@@ -1,24 +1,17 @@
-"""Schema for Berlin rental listings.
 
-The Immowelt Berlin listings Kaggle dataset may vary in column naming.
-We infer the most likely columns from the CSV headers so the pipeline runs
-with minimal manual edits.
-
-If inference is wrong, hardcode the *_COL constants.
-"""
 
 from __future__ import annotations
 
 from dataclasses import dataclass
 from typing import Iterable, Optional
 
-# ---- Defaults (used if inference fails) ----
+
 TARGET_COL = "price"
 AREA_COL = "area"
 ROOMS_COL = "rooms"
-DISTRICT_COL = "district"
-YEAR_BUILT_COL = "year_built"
-PROPERTY_TYPE_COL = "type"
+DISTRICT_COL = "zipcode"         
+YEAR_BUILT_COL = "construction_year"
+PROPERTY_TYPE_COL = None         
 
 
 @dataclass(frozen=True)
@@ -128,3 +121,4 @@ def resolve_inplace(columns: Iterable[str]) -> ResolvedSchema:
     if s.property_type:
         PROPERTY_TYPE_COL = s.property_type
     return s
+
