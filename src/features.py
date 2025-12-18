@@ -8,12 +8,11 @@ from sklearn.preprocessing import StandardScaler
 from . import schema
 
 def build_preprocess_pipeline(df: pd.DataFrame) -> tuple[ColumnTransformer, list[str], list[str]]:
-    """Return a ColumnTransformer and the identified numeric/categorical columns.
-
-    You must ensure the schema column names exist, or update `src/schema.py`.
-    """
+    
     numeric_cols = [c for c in [schema.AREA_COL, schema.ROOMS_COL, "property_age"] if c in df.columns]
-    categorical_cols = [c for c in [schema.DISTRICT_COL, schema.PROPERTY_TYPE_COL] if c in df.columns]
+    candidate_cats = [schema.DISTRICT_COL, schema.PROPERTY_TYPE_COL]
+    categorical_cols = [c for c in candidate_cats if c and c in df.columns]
+
 
     numeric_pipe = Pipeline(steps=[
         ("imputer", SimpleImputer(strategy="median")),
@@ -33,3 +32,4 @@ def build_preprocess_pipeline(df: pd.DataFrame) -> tuple[ColumnTransformer, list
         remainder="drop",
     )
     return pre, numeric_cols, categorical_cols
+
