@@ -14,7 +14,7 @@ def _dbg(df: pd.DataFrame, msg: str) -> pd.DataFrame:
 
 
 def basic_clean(df: pd.DataFrame) -> pd.DataFrame:
-    """Minimal, defensible cleaning. Keep it simple and explain choices in your report."""
+    
     df = df.copy()
     _dbg(df, "before coercion")
 
