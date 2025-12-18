@@ -1,4 +1,4 @@
-# Predictive Analysis of Rental Prices in Berlin
+# Predictive Analysis of Residential Sale Prices in Berlin
 
 This repository builds a reproducible pipeline to predict **Residential Property sales** for Berlin sales listings.
 
