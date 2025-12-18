@@ -1,6 +1,6 @@
 # Predictive Analysis of Rental Prices in Berlin
 
-This repository builds a reproducible pipeline to predict **monthly rent (EUR)** for Berlin rental listings.
+This repository builds a reproducible pipeline to predict **Residential Property sales** for Berlin sales listings.
 
 The implementation is intentionally small and auditable:
 - Baseline (mean)
@@ -8,9 +8,7 @@ The implementation is intentionally small and auditable:
 - Random Forest regression (non-linear ensemble)
 
 ## Dataset
-Download the CSV from Kaggle and save it as:
-
-`data/berlin_listings.csv`
+Downloaded from Kaggle
 
 Dataset: *Real Estate Listings Berlin (DE) April 2023* (Immowelt scrape)
 - https://www.kaggle.com/datasets/mathisjander/real-estate-listings-berlin-de-april-2023
